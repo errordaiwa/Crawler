@@ -38,6 +38,11 @@
 			<groupId>com.github.jmkgreen.morphia</groupId>
 			<artifactId>morphia</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.htmlcleaner</groupId>
+			<artifactId>htmlcleaner</artifactId>
+			<version>2.6.1</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>

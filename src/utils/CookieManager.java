@@ -74,6 +74,10 @@ public class CookieManager {
 				.get(getTopLevelDomain(domain));
 		domainCookieQueue.remove(cookie);
 	}
+	
+	public void removeAll() {
+		cookies.clear();
+	}
 
 	/**
 	 * Get singleton

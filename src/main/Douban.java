@@ -6,7 +6,9 @@ import java.util.concurrent.ThreadPoolExecutor;
 import bean.UrlBean;
 
 import utils.Const;
+import utils.CookieManager;
 import utils.DBManager;
+import utils.IPChanger;
 
 /**
  * Crawl movie info from Douban
@@ -19,6 +21,39 @@ public class Douban {
 	public static int userLimit = 100;
 
 	public static void main(String[] args) {
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				while (true) {
+					try {
+						IPChanger.cutAdsl(IPChanger.ADSL_TITLE);
+					} catch (Exception e) {
+					}
+					try {
+						Thread.sleep(2000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					CookieManager.getInstance().removeAll();
+					try {
+						IPChanger.connAdsl(IPChanger.ADSL_TITLE, IPChanger.ADSL_USER, IPChanger.ADSL_PASSWORD);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					try {
+						Thread.sleep(900000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				
+			}
+		}).start();
 
 		Douban news = new Douban();
 		UrlBean urlBean = new UrlBean();
@@ -26,6 +61,7 @@ public class Douban {
 		urlBean.setUrl("http://movie.douban.com/people/60648596/collect?start=");
 		DBManager.getInstance().saveToDB(urlBean);
 		news.run();
+		
 
 	}
 

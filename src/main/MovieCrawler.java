@@ -61,7 +61,7 @@ public class MovieCrawler extends Thread {
 		this.urlBean = new UrlBean();
 		urlBean.setUrl(url);
 		urlBean.setType(Const.typeMovie);
-		urlBean.setNeedToSavePeople(false);
+		urlBean.setNeedToSavePeople(true);
 		urlBean.setNeedToSaveUser(false);
 		movieParser = new Parser();
 		dbManager = DBManager.getInstance();
