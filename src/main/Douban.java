@@ -56,10 +56,10 @@ public class Douban {
 		}).start();
 
 		Douban news = new Douban();
-		UrlBean urlBean = new UrlBean();
-		urlBean.setType(Const.typeUser);
-		urlBean.setUrl("http://movie.douban.com/people/60648596/collect?start=");
-		DBManager.getInstance().saveToDB(urlBean);
+//		UrlBean urlBean = new UrlBean();
+//		urlBean.setType(Const.typeUser);
+//		urlBean.setUrl("http://movie.douban.com/people/60648596/collect?start=");
+//		DBManager.getInstance().saveToDB(urlBean);
 		news.run();
 		
 

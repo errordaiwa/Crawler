@@ -92,7 +92,7 @@ public class UserCrawler extends Thread {
 				
 				UrlBean urlBean = new UrlBean();
 				urlBean.setUrl(movieUrl);
-				urlBean.setNeedToSavePeople(true);//TODO true是爬people     false不爬，用户爬去用户观看列表时。
+				urlBean.setNeedToSavePeople(false);//TODO true是爬people     false不爬，用户爬去用户观看列表时。
 				urlBean.setNeedToSaveUser(false);
 				urlBean.setType(Const.typeMovie);
 				synchronized (dbManger) {

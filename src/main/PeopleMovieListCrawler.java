@@ -68,7 +68,7 @@ public class PeopleMovieListCrawler extends Thread {
 				String movieUrl = linkTag.getLink();
 				UrlBean urlBean = new UrlBean();
 				urlBean.setUrl(movieUrl);
-				urlBean.setNeedToSavePeople(true);
+				urlBean.setNeedToSavePeople(false);
 				urlBean.setNeedToSaveUser(false);
 				urlBean.setType(Const.typeMovie);
 				synchronized (dbManager) {
